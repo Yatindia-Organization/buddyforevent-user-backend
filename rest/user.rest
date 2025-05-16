@@ -1,0 +1,42 @@
+### Add a new user
+POST http://122.165.127.146:5200/api/users/add
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "mobileNumber": 9876543210,
+  "members": 3
+}
+
+### Update user (replace `USER_ID` with actual MongoDB ID)
+PUT http://localhost:5200/api/users/update/8015012475
+Content-Type: application/json
+
+{
+  "name": "Noel",
+  "members": 3
+}
+
+### Send OTP to a user
+POST http://localhost:5200/api/users/send-otp
+Content-Type: application/json
+
+{
+  "mobileNumber": 9976089117
+}
+
+### Get user
+GET http://localhost:5200/api/users/9976089117
+
+
+### Check OTP
+POST http://localhost:3000/api/users/check-otp
+Content-Type: application/json
+
+{
+  "mobileNumber": 9876543210,
+  "otp": 123456
+}
+
+###filw
+GET http://localhost:5200/files/qr/68270ed084234f3bd7b7a196.png
